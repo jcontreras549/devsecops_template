@@ -32,7 +32,18 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          
+
+#EXPONER VARIABLES FUERA DEL JOB
+#      - name: format Enviroment
+#        id: format-env
+#        run: echo "image_uri=${{ steps.login-ecr.outputs.registry }}/app_01:1.0.0" >> $GITHUB_OUTPUT
+
+#EXPONER VARIABLE DENTRO DEL JOB
+      # - name: Obtener nombre del repositorio
+      #   run: |
+      #     REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+      #     echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+
       - name: Build with Maven
         run: mvn clean package
 
