@@ -7,6 +7,8 @@ on:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
+      SECRET_MANAGER:
+        required: true
 
 jobs:
   build-and-test:
